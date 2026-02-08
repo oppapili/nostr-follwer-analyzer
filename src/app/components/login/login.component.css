@@ -1,0 +1,132 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 20px;
+}
+
+.login-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-card h2 {
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #333;
+  font-size: 24px;
+}
+
+.login-available p,
+.login-unavailable p {
+  margin-bottom: 20px;
+  color: #666;
+  font-size: 16px;
+}
+
+.login-button {
+  background-color: #8b5cf6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  min-width: 150px;
+}
+
+.login-button:hover:not(:disabled) {
+  background-color: #7c3aed;
+  transform: translateY(-1px);
+}
+
+.login-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.login-button:disabled {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.warning-message {
+  color: #f59e0b;
+  font-weight: 500;
+  padding: 12px;
+  background-color: #fef3c7;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.extension-links {
+  text-align: left;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: 6px;
+}
+
+.extension-links p {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.extension-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.extension-links li {
+  margin-bottom: 8px;
+}
+
+.extension-links a {
+  color: #8b5cf6;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.extension-links a:hover {
+  color: #7c3aed;
+  text-decoration: underline;
+}
+
+.error-message {
+  margin-top: 20px;
+  padding: 12px;
+  background-color: #fee2e2;
+  border-radius: 6px;
+  color: #dc2626;
+  font-weight: 500;
+}
+
+.error-message p {
+  margin: 0;
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 600px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+
+  .login-card h2 {
+    font-size: 20px;
+  }
+
+  .login-button {
+    width: 100%;
+  }
+}

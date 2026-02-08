@@ -59,7 +59,6 @@
 
 - [x] 5. DataProcessingService の実装
 
-
 - [x] 5.1 データ集計機能の実装
   - aggregateDailyActivity() メソッドを実装（日別投稿数の集計）
   - 欠損日のゼロ埋め処理を実装
@@ -75,14 +74,16 @@
   - truncatePubkey() メソッドを実装（pubkey の省略表示）
   - _Requirements: 5.3, 4.4_
 
-- [ ] 6. LoginComponent の実装
-- [ ] 6.1 ログインUIの作成
+- [x] 6. LoginComponent の実装
+
+
+- [x] 6.1 ログインUIの作成
   - NIP-07 拡張機能の有無に応じた表示切り替え
   - ログインボタンの実装
   - エラーメッセージ表示エリアの実装
   - _Requirements: 1.2, 1.3_
 
-- [ ] 6.2 ログイン処理の実装
+- [x] 6.2 ログイン処理の実装
   - Nip07Service.login() の呼び出し
   - ログイン成功時の loginSuccess イベント発火
   - エラーハンドリング

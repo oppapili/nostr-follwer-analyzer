@@ -1,0 +1,47 @@
+<div class="login-container">
+  <div class="login-card">
+    <h2>Nostr フォロワー分析</h2>
+    
+    <!-- NIP-07 拡張機能が利用可能な場合 -->
+    <!-- Requirements: 1.2, 1.3 -->
+    <div *ngIf="nip07Available" class="login-available">
+      <p>NIP-07 拡張機能が検出されました</p>
+      <button 
+        class="login-button"
+        (click)="onLogin()"
+        [disabled]="loading">
+        <span *ngIf="!loading">ログイン</span>
+        <span *ngIf="loading">ログイン中...</span>
+      </button>
+    </div>
+
+    <!-- NIP-07 拡張機能が利用できない場合 -->
+    <!-- Requirements: 1.2, 1.3 -->
+    <div *ngIf="!nip07Available" class="login-unavailable">
+      <p class="warning-message">
+        Nostr 拡張機能（Alby, nos2x など）をインストールしてください
+      </p>
+      <div class="extension-links">
+        <p>推奨拡張機能:</p>
+        <ul>
+          <li>
+            <a href="https://getalby.com/" target="_blank" rel="noopener noreferrer">
+              Alby (Chrome, Firefox)
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/fiatjaf/nos2x" target="_blank" rel="noopener noreferrer">
+              nos2x (Chrome)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- エラーメッセージ表示エリア -->
+    <!-- Requirements: 1.3, 1.7 -->
+    <div *ngIf="errorMessage" class="error-message">
+      <p>{{ errorMessage }}</p>
+    </div>
+  </div>
+</div>
