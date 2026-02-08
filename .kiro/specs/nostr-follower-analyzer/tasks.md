@@ -41,7 +41,6 @@
 
 - [x] 4. Nip07Service の実装
 
-
 - [x] 4.1 NIP-07 拡張機能の検出とログイン機能
   - isAvailable() メソッドを実装（window.nostr の存在確認）
   - login() メソッドを実装（getPublicKey() の呼び出し）
@@ -58,18 +57,20 @@
   - signEvent() を使用したイベント署名処理
   - _Requirements: 9.5, 9.6, 9.7_
 
-- [ ] 5. DataProcessingService の実装
-- [ ] 5.1 データ集計機能の実装
+- [x] 5. DataProcessingService の実装
+
+
+- [x] 5.1 データ集計機能の実装
   - aggregateDailyActivity() メソッドを実装（日別投稿数の集計）
   - 欠損日のゼロ埋め処理を実装
   - _Requirements: 6.2, 6.3, 6.5_
 
-- [ ] 5.2 ソート機能の実装
+- [x] 5.2 ソート機能の実装
   - sortFollowers() メソッドを実装（ユーザー名またはpubkeyでソート）
   - 大文字小文字を区別しないソート処理
   - _Requirements: 8.1, 8.2, 8.3, 8.4_
 
-- [ ] 5.3 ユーティリティ関数の実装
+- [x] 5.3 ユーティリティ関数の実装
   - formatTimestamp() メソッドを実装（UNIX timestamp → 人が読める形式）
   - truncatePubkey() メソッドを実装（pubkey の省略表示）
   - _Requirements: 5.3, 4.4_
