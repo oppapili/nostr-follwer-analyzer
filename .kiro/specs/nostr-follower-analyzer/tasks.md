@@ -39,19 +39,21 @@
   - タイムアウト処理の実装
   - _Requirements: 2.6_
 
-- [ ] 4. Nip07Service の実装
-- [ ] 4.1 NIP-07 拡張機能の検出とログイン機能
+- [x] 4. Nip07Service の実装
+
+
+- [x] 4.1 NIP-07 拡張機能の検出とログイン機能
   - isAvailable() メソッドを実装（window.nostr の存在確認）
   - login() メソッドを実装（getPublicKey() の呼び出し）
   - logout() メソッドを実装
   - _Requirements: 1.1, 1.2, 1.4, 1.8_
 
-- [ ] 4.2 フォロー状態管理機能の実装
+- [x] 4.2 フォロー状態管理機能の実装
   - getCurrentUserContactList() メソッドを実装
   - checkFollowingStatus() メソッドを実装
   - _Requirements: 9.1, 9.2_
 
-- [ ] 4.3 フォロー処理機能の実装
+- [x] 4.3 フォロー処理機能の実装
   - followUser() メソッドを実装
   - signEvent() を使用したイベント署名処理
   - _Requirements: 9.5, 9.6, 9.7_
