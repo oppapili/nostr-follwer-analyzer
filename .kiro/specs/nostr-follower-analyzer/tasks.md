@@ -1,48 +1,40 @@
 # Implementation Plan
 
 - [x] 1. Angular プロジェクトのセットアップと基本構造の作成
-
-
-
-
-
   - Angular CLI を使用して新規プロジェクトを作成
   - 必要な依存関係（Chart.js, ng2-charts）をインストール
   - GitHub Pages デプロイ用の設定を追加
   - _Requirements: 10.1, 10.2, 10.3, 10.4_
 
 - [x] 2. データモデルとインターフェースの定義
-
-
-
-
-
   - TypeScript インターフェース（NostrEvent, NostrFilter, Metadata, Note, Follower, DailyActivity）を作成
   - WebSocket メッセージ型（NostrMessage, NostrRequest, NostrClose）を定義
   - _Requirements: 11.1_
 
-- [ ] 3. NostrService の実装
-- [ ] 3.1 WebSocket 接続管理機能の実装
+- [x] 3. NostrService の実装
+
+- [x] 3.1 WebSocket 接続管理機能の実装
   - WebSocket 接続・切断メソッドを実装
   - サブスクリプション ID の生成・管理機能を実装
   - RxJS Subject を使用したイベントストリームを実装
   - _Requirements: 2.1, 2.2, 2.5, 11.2, 11.3_
 
-- [ ] 3.2 イベント取得メソッドの実装
+- [x] 3.2 イベント取得メソッドの実装
   - REQ メッセージの送信機能を実装
   - EOSE の検出と処理を実装
+
   - getFollowers() メソッドを実装（kind:3 の逆参照）
   - getMetadata() メソッドを実装（kind:0）
   - getLatestNote() メソッドを実装（kind:1、limit:1）
   - getActivityData() メソッドを実装（kind:1、直近30日）
   - _Requirements: 2.2, 2.3, 2.4, 3.1, 3.2, 3.3, 4.1, 4.2, 5.1, 5.2, 6.1, 6.2_
 
-- [ ] 3.3 イベント送信機能の実装
+- [x] 3.3 イベント送信機能の実装
   - publishEvent() メソッドを実装
   - OK メッセージの処理を実装
   - _Requirements: 2.2, 9.7, 9.8_
 
-- [ ] 3.4 エラーハンドリングの実装
+- [x] 3.4 エラーハンドリングの実装
   - WebSocket エラーのキャッチと処理
   - タイムアウト処理の実装
   - _Requirements: 2.6_
