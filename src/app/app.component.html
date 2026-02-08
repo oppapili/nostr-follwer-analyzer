@@ -1,8 +1,42 @@
 <div class="container">
   <header>
     <h1>{{ title }}</h1>
+    
+    <!-- ログイン状態表示 -->
+    <div class="user-info" *ngIf="isLoggedIn">
+      <span class="pubkey">{{ getTruncatedPubkey() }}</span>
+      <button class="logout-btn" (click)="onLogout()">ログアウト</button>
+    </div>
   </header>
+
   <main>
-    <router-outlet></router-outlet>
+    <!-- ログインコンポーネント -->
+    <app-login 
+      *ngIf="!isLoggedIn" 
+      (loginSuccess)="onLoginSuccess($event)">
+    </app-login>
+
+    <!-- 成功メッセージ -->
+    <div class="success-message" *ngIf="successMessage">
+      {{ successMessage }}
+    </div>
+
+    <!-- エラーメッセージ -->
+    <div class="error-message" *ngIf="errorMessage">
+      {{ errorMessage }}
+    </div>
+
+    <!-- ローディング表示 -->
+    <div class="loading" *ngIf="loading">
+      <div class="spinner"></div>
+      <p>フォロワー情報を取得中...</p>
+    </div>
+
+    <!-- フォロワーリスト -->
+    <app-follower-list
+      *ngIf="isLoggedIn && !loading && followers.length > 0"
+      [followers]="followers"
+      (followUser)="onFollowUser($event)">
+    </app-follower-list>
   </main>
 </div>

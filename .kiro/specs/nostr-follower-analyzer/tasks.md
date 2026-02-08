@@ -76,7 +76,6 @@
 
 - [x] 6. LoginComponent の実装
 
-
 - [x] 6.1 ログインUIの作成
   - NIP-07 拡張機能の有無に応じた表示切り替え
   - ログインボタンの実装
@@ -89,20 +88,22 @@
   - エラーハンドリング
   - _Requirements: 1.4, 1.5, 1.7_
 
-- [ ] 7. AppComponent の実装
-- [ ] 7.1 ログイン状態管理の実装
+- [x] 7. AppComponent の実装
+
+
+- [x] 7.1 ログイン状態管理の実装
   - isLoggedIn フラグの管理
   - currentUserPubkey の保持
   - ログアウト処理の実装
   - _Requirements: 1.5, 1.6, 1.8_
 
-- [ ] 7.2 フォロワー取得処理の統合
+- [x] 7.2 フォロワー取得処理の統合
   - LoginComponent からの loginSuccess イベントを受信
   - NostrService.getFollowers() の呼び出し
   - ローディング状態の管理
   - _Requirements: 3.1, 3.2, 3.3, 7.1_
 
-- [ ] 7.3 フォロー処理の統合
+- [x] 7.3 フォロー処理の統合
   - FollowerListComponent からの followUser イベントを受信
   - Nip07Service.followUser() の呼び出し
   - 成功メッセージの表示
