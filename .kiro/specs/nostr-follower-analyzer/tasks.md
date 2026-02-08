@@ -11,7 +11,12 @@
   - GitHub Pages デプロイ用の設定を追加
   - _Requirements: 10.1, 10.2, 10.3, 10.4_
 
-- [ ] 2. データモデルとインターフェースの定義
+- [x] 2. データモデルとインターフェースの定義
+
+
+
+
+
   - TypeScript インターフェース（NostrEvent, NostrFilter, Metadata, Note, Follower, DailyActivity）を作成
   - WebSocket メッセージ型（NostrMessage, NostrRequest, NostrClose）を定義
   - _Requirements: 11.1_
