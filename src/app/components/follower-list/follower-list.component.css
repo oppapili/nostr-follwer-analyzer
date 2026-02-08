@@ -1,0 +1,198 @@
+.follower-list-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ローディング状態 */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  margin-top: 20px;
+  color: #666;
+  font-size: 16px;
+}
+
+/* フォロワーが存在しない場合 */
+.no-followers {
+  text-align: center;
+  padding: 60px 20px;
+  color: #666;
+  font-size: 18px;
+}
+
+/* フォロワー一覧グリッド */
+.followers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* フォロワーカード */
+.follower-card {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.follower-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* プロフィール画像 */
+.follower-avatar {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.follower-avatar img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #e0e0e0;
+}
+
+.default-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+  border: 2px solid #e0e0e0;
+}
+
+/* フォロワー情報 */
+.follower-info {
+  text-align: center;
+}
+
+.follower-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0 0 5px 0;
+  word-break: break-word;
+}
+
+.follower-pubkey {
+  font-size: 12px;
+  color: #999;
+  font-family: monospace;
+  margin: 0 0 15px 0;
+}
+
+/* 最新投稿 */
+.latest-note {
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 12px;
+  margin: 15px 0;
+  text-align: left;
+}
+
+.note-content {
+  font-size: 14px;
+  color: #333;
+  margin: 0 0 8px 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note-date {
+  font-size: 12px;
+  color: #999;
+  margin: 0;
+}
+
+.no-note {
+  padding: 12px;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.no-note p {
+  font-size: 14px;
+  color: #999;
+  margin: 0;
+}
+
+/* フォローボタン */
+.follow-button {
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #3498db;
+  color: white;
+}
+
+.follow-button:hover:not(:disabled) {
+  background: #2980b9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
+}
+
+.follow-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.follow-button.following {
+  background: #95a5a6;
+  cursor: not-allowed;
+}
+
+.follow-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+  .followers-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .follower-list-container {
+    padding: 10px;
+  }
+}

@@ -1,0 +1,58 @@
+<div class="follower-list-container">
+  <!-- ローディング状態 -->
+  <div *ngIf="loading" class="loading-container">
+    <div class="spinner"></div>
+    <p>フォロワー情報を取得中...</p>
+  </div>
+
+  <!-- フォロワーが存在しない場合 -->
+  <div *ngIf="!loading && followers.length === 0" class="no-followers">
+    <p>フォロワーが見つかりませんでした</p>
+  </div>
+
+  <!-- フォロワー一覧 -->
+  <div *ngIf="!loading && followers.length > 0" class="followers-grid">
+    <div *ngFor="let follower of sortedFollowers" class="follower-card">
+      <!-- プロフィール画像 -->
+      <div class="follower-avatar">
+        <img 
+          *ngIf="follower.metadata?.picture" 
+          [src]="follower.metadata.picture" 
+          [alt]="follower.metadata?.name || follower.pubkey"
+          (error)="$any($event.target).src='assets/default-avatar.png'"
+        />
+        <div *ngIf="!follower.metadata?.picture" class="default-avatar">
+          {{ (follower.metadata?.name || follower.pubkey).charAt(0).toUpperCase() }}
+        </div>
+      </div>
+
+      <!-- フォロワー情報 -->
+      <div class="follower-info">
+        <h3 class="follower-name">
+          {{ follower.metadata?.display_name || follower.metadata?.name || follower.pubkey.substring(0, 8) + '...' }}
+        </h3>
+        <p class="follower-pubkey">{{ follower.pubkey.substring(0, 16) }}...</p>
+
+        <!-- 最新投稿 -->
+        <div class="latest-note" *ngIf="follower.latestNote">
+          <p class="note-content">{{ follower.latestNote.content }}</p>
+          <p class="note-date">{{ follower.latestNote.created_at * 1000 | date: 'yyyy年M月d日 HH:mm' }}</p>
+        </div>
+        <div class="no-note" *ngIf="!follower.latestNote">
+          <p>投稿がありません</p>
+        </div>
+
+        <!-- フォローボタン -->
+        <button 
+          class="follow-button"
+          [class.following]="follower.isFollowing"
+          [disabled]="follower.isFollowing"
+          (click)="onFollowUser(follower.pubkey)"
+          [attr.aria-label]="'フォロー ' + (follower.metadata?.name || follower.pubkey)"
+        >
+          {{ follower.isFollowing ? 'フォロー中' : 'フォロー' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -90,7 +90,6 @@
 
 - [x] 7. AppComponent の実装
 
-
 - [x] 7.1 ログイン状態管理の実装
   - isLoggedIn フラグの管理
   - currentUserPubkey の保持
@@ -109,14 +108,14 @@
   - 成功メッセージの表示
   - _Requirements: 9.5, 9.6, 9.7, 9.8, 9.9_
 
-- [ ] 8. FollowerListComponent の実装
-- [ ] 8.1 フォロワー一覧表示の実装
+- [x] 8. FollowerListComponent の実装
+- [x] 8.1 フォロワー一覧表示の実装
   - Follower[] を入力として受け取る
   - ソート済みフォロワーの表示
   - ローディング状態の表示
   - _Requirements: 7.2, 7.3, 7.4_
 
-- [ ] 8.2 フォロー状態の表示
+- [x] 8.2 フォロー状態の表示
   - 各フォロワーの isFollowing フラグに基づいた表示切り替え
   - followUser イベントの発火
   - _Requirements: 9.3, 9.4_
